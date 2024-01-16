@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ch-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登錄頁面</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 8px;
+    }
+
+    input {
+      padding: 8px;
+      margin-bottom: 16px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <form id="loginForm">
+      <label for="username">賬號：</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">密碼：</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="button" onclick="login()">登錄</button>
+    </form>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function login() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var message = document.getElementById('message');
+
+      // 在實際應用中，這裡應該要與後端進行驗證，以下是一個簡單的示例
+      if (username === 'user' && password === 'password') {
+        message.style.color = 'green';
+        message.textContent = '登錄成功！';
+      } else {
+        message.style.color = 'red';
+        message.textContent = '賬號或密碼錯誤';
+      }
+    }
+  </script>
+</body>
+</html>
